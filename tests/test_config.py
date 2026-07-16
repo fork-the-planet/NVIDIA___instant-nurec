@@ -32,6 +32,7 @@ from pydantic import ValidationError
 
 from instant_nurec.config_schema.dataset import (
     AdaptiveSequentialFrameBatchSamplerConfig,
+    CameraSubsamplerConfig,
     NCoreInstantNuRecCuboidTracksParamsConfig,
 )
 from instant_nurec.config_schema.instantnurec import GaussiansInstantNuRecSystemConfig, InstantNuRecConfig
@@ -132,6 +133,22 @@ def test_primitive_export_preprocess_default():
 
 
 # ---------------------------------------------------------------------------
+# KelvinModelConfig
+# ---------------------------------------------------------------------------
+
+
+def test_kelvin_model_config_exposes_architecture_defaults():
+    cfg = KelvinModelConfig()
+    assert isinstance(cfg.export_preprocess, PrimitiveExportPreprocessConfig)
+    assert cfg.encoder.embed_dim == 1536
+    assert cfg.encoder.take_block_indices == [5, 7, 9, 11]
+    assert cfg.decoder.dpt_dim == 128
+    assert cfg.sky.cubemap_size == 448
+    assert cfg.scene_rescale == 0.15
+    assert cfg.track_padding_m == [1.0, 1.0, 1.0]
+
+
+# ---------------------------------------------------------------------------
 # NCoreInstantNuRecCuboidTracksParamsConfig
 # ---------------------------------------------------------------------------
 
@@ -181,8 +198,15 @@ def test_adaptive_sequential_frame_batch_sampler_basic():
     cfg = AdaptiveSequentialFrameBatchSamplerConfig(
         n_samples_per_sequence=2, max_frame_gap_timestamp_us=200000
     )
+    assert cfg.n_frames_per_sample == 18
     assert cfg.n_samples_per_sequence == 2
     assert cfg.max_frame_gap_timestamp_us == 200000
+
+
+def test_camera_subsampler_public_model_dimensions():
+    cfg = CameraSubsamplerConfig()
+    assert cfg.frame_width == 784
+    assert cfg.frame_height == 448
 
 
 # ---------------------------------------------------------------------------
