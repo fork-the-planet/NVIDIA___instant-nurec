@@ -3,11 +3,13 @@
 
 # InstantNuRec: Feed-Forward 3D Gaussian Reconstruction from Driving Logs
 
-[![License](https://img.shields.io/badge/License-Apache--2.0-orange)](LICENSE.txt)
-[![Model](https://img.shields.io/badge/HF-Model-yellow?logo=huggingface&style=flat-square)](https://huggingface.co/nvidia/instant-nurec)
-[![Data](https://img.shields.io/badge/NCore-0d9488?logo=database&logoColor=white&style=flat-square)](https://huggingface.co/datasets/nvidia/PhysicalAI-Autonomous-Vehicles-NCore)
+[![Project Page](https://img.shields.io/badge/Project-Page-green)](https://research.nvidia.com/labs/sil/projects/instant-nurec/) [![Paper](https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv)](https://research.nvidia.com/labs/sil/projects/instant-nurec/assets/InstantNuRec.pdf) [![License](https://img.shields.io/badge/License-Apache--2.0-orange)](LICENSE.txt) [![Model](https://img.shields.io/badge/HF-Model-yellow?logo=huggingface&style=flat-square)](https://huggingface.co/nvidia/instant-nurec) [![Data](https://img.shields.io/badge/NCore-0d9488?logo=database&logoColor=white&style=flat-square)](https://huggingface.co/datasets/nvidia/PhysicalAI-Autonomous-Vehicles-NCore)
 
 **NVIDIA**
+
+## Announcements
+
+- **July 2026:** The [InstantNuRec project page](https://research.nvidia.com/labs/sil/projects/instant-nurec/) and [paper](https://research.nvidia.com/labs/sil/projects/instant-nurec/assets/InstantNuRec.pdf) are now available.
 
 ### Abstract
 
