@@ -12,17 +12,3 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-# pytest auto-loads this before collection so the in-tree package resolves
-# without an editable install.
-
-import sys
-
-from pathlib import Path
-
-
-_REPO_ROOT = Path(__file__).resolve().parent
-
-_repo_root = str(_REPO_ROOT)
-if _repo_root not in sys.path:
-    sys.path.insert(0, _repo_root)
